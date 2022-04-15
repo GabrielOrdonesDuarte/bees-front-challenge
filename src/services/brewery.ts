@@ -20,7 +20,7 @@ export interface IBreweries {
    created_at: string;
 };
 
-export const getBreweries = async (): Promise<IBreweries> => {
+export const getBreweries = async (): Promise<Array<IBreweries>> => {
    const { data } = await api.get("/breweries");
    return data;
 };
