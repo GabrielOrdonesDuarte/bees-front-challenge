@@ -1,10 +1,14 @@
 type TextFieldProps = {
-  brewery_type: string | null;
-  postal_code: string | null;
-  phone: string | null;
-};
+  brewery_type: string | null
+  postal_code: string | null
+  phone: string | null
+}
 
 const Tags = ({ brewery_type, postal_code, phone }: TextFieldProps) => {
+  const handleAddMore = () => {
+    console.log('object')
+  }
+
   return (
     <section>
       {brewery_type && (
@@ -25,12 +29,12 @@ const Tags = ({ brewery_type, postal_code, phone }: TextFieldProps) => {
           <span>{phone}</span>
         </div>
       )}
-      {/* <div>
+      <div onClick={() => handleAddMore()}>
         <img src="/assets/add_more.svg" alt="Icon" />
         <span>add more</span>
-      </div> */}
+      </div>
     </section>
-  );
-};
+  )
+}
 
-export default Tags;
+export default Tags

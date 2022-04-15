@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import media from "styled-media-query";
+import media from 'styled-media-query'
 
 export const Header = styled.header`
   ${({ theme }) => css`
@@ -13,7 +13,7 @@ export const Header = styled.header`
     align-items: center;
     transition: padding 0.2s ease-in-out;
 
-    ${media.lessThan("medium")`
+    ${media.lessThan('medium')`
       padding: ${theme.spacings.xxsmall};
     `}
   `}
@@ -26,7 +26,7 @@ export const Name = styled.h2`
     line-height: 150%;
     transition: font-size 0.2s ease-in-out;
 
-    ${media.lessThan("medium")`
+    ${media.lessThan('medium')`
       font-size: ${theme.font.sizes.large};
     `}
   `}
@@ -50,7 +50,7 @@ export const Action = styled.button`
       margin-right: 2rem;
       transition: margin-right 0.2s ease-in-out;
 
-      ${media.lessThan("medium")`
+      ${media.lessThan('medium')`
         margin-right: 0.8rem;
       `}
     }
@@ -59,7 +59,7 @@ export const Action = styled.button`
       opacity: 0.8;
     }
 
-    ${media.lessThan("medium")`
+    ${media.lessThan('medium')`
       font-size: ${theme.font.sizes.large};
     `}
   `}

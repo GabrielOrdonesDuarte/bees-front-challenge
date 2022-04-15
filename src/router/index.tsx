@@ -1,39 +1,40 @@
-import { Route, Routes, Navigate } from "react-router-dom";
-import BreweryList from "templates/BreweryList";
-import Home from "templates/Home";
-import { useUser } from "contexts/user";
+import { Route, Routes, Navigate } from 'react-router-dom'
+import BreweryList from 'templates/BreweryList'
+import Home from 'templates/Home'
+import { useUser } from 'contexts/user'
 
 const Router = () => {
-   const { isAuthenticated } = useUser();
+  const { isAuthenticated } = useUser()
 
-   return (
-      <Routes>
-         <Route path="/" element={<Home />} />
-         <Route
-            path="/list"
-            element={
-               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <BreweryList />
-               </ProtectedRoute>
-            }
-         />
-      </Routes>
-   );
-};
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/list"
+        element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <BreweryList />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  )
+}
 
-export default Router;
+export default Router
 
 type ProtectedRouteProps = {
-   isAuthenticated: boolean;
-   children: React.ReactNode;
-};
+  isAuthenticated: boolean
+  children: React.ReactNode
+}
 
 const ProtectedRoute = ({
-   isAuthenticated,
-   children,
-}: ProtectedRouteProps): any => {
-   if (!isAuthenticated) {
-      return <Navigate to="/" />;
-   }
-   return children;
-};
+  isAuthenticated,
+  children,
+}: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+ProtectedRouteProps): any => {
+  if (!isAuthenticated) {
+    return <Navigate to="/" />
+  }
+  return children
+}

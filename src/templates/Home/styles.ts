@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import media from "styled-media-query";
+import media from 'styled-media-query'
 
-import { Wrapper as CheckBox } from 'components/Checkbox/styles' 
+import { Wrapper as CheckBox } from 'components/Checkbox/styles'
 
 export const Home = styled.section`
   ${({ theme }) => css`
@@ -10,7 +10,7 @@ export const Home = styled.section`
     align-content: center;
     justify-content: center;
     align-items: center;
-    background-color: ${theme.colors.primary}; 
+    background-color: ${theme.colors.primary};
     height: 100%;
   `}
 `
@@ -59,7 +59,7 @@ export const HeroImage = styled.img`
   left: 0;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 
-  ${media.lessThan("medium")`
+  ${media.lessThan('medium')`
     width: 100px;
     height: 100px;
   `}

@@ -1,17 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
-import { useUser } from "contexts/user";
+import { useUser } from 'contexts/user'
 
-import * as S from "./styles";
+import * as S from './styles'
 
 const Header = () => {
-  const { userName, logout } = useUser();
-  const navigate = useNavigate();
+  const { userName, logout } = useUser()
+  const navigate = useNavigate()
 
   const handleGoBack = () => {
-    logout();
-    navigate("/");
-  };
+    logout()
+    navigate('/')
+  }
 
   return (
     <S.Header>
@@ -21,7 +21,7 @@ const Header = () => {
 
       <S.Name>{userName}</S.Name>
     </S.Header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

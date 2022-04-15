@@ -1,32 +1,32 @@
-import Tags from "components/Tags";
-import React from "react";
-import { IBreweries } from "services/brewery";
+import Tags from 'components/Tags'
+import React from 'react'
+import { IBreweries } from 'services/brewery'
 
 type CardProps = {
-  breweries?: Array<IBreweries>;
-  loading: boolean;
-  setBreweries: React.Dispatch<React.SetStateAction<IBreweries[] | undefined>>;
-};
+  breweries?: Array<IBreweries>
+  loading: boolean
+  setBreweries: React.Dispatch<React.SetStateAction<IBreweries[] | undefined>>
+}
 
 const Card = ({ breweries, loading, setBreweries }: CardProps) => {
   const handleDelete = (breweryId: string) => {
     if (breweries)
-      setBreweries(breweries.filter((brewery) => brewery.id !== breweryId));
-  };
+      setBreweries(breweries.filter((brewery) => brewery.id !== breweryId))
+  }
 
-//   display: grid
-//   grid-template-columns: repeat(3, 1fr)
-//   gap: 48px
+  //   display: grid
+  //   grid-template-columns: repeat(3, 1fr)
+  //   gap: 48px
 
   const showCards = () => {
     if (loading) {
-      return <h1>Carregando</h1>;
+      return <h1>Carregando</h1>
     } else {
       return (
         <div>
           {breweries &&
             breweries.map((brewery: IBreweries) => {
-              const { brewery_type, postal_code, phone } = brewery;
+              const { brewery_type, postal_code, phone } = brewery
               return (
                 <div key={brewery.id}>
                   <button onClick={() => handleDelete(brewery.id)}>
@@ -43,14 +43,14 @@ const Card = ({ breweries, loading, setBreweries }: CardProps) => {
                     phone={phone}
                   />
                 </div>
-              );
+              )
             })}
         </div>
-      );
+      )
     }
-  };
+  }
 
-  return showCards();
-};
+  return showCards()
+}
 
-export default Card;
+export default Card
