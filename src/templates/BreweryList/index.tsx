@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 
 import Card from 'components/Card'
 import Header from 'components/Header'
+import Loading from 'templates/Loading'
 
 import { getBreweries, IBreweries } from 'services/brewery'
 
@@ -16,8 +18,8 @@ const BreweryList = () => {
       try {
         const data = await getBreweries()
         setBreweries(data)
-        // TODO: Adicionar toast
       } catch (error) {
+        toast.error('😢 An unexpected error occurred, please try again later')
         console.log(error)
       } finally {
         setLoading(false)
@@ -26,16 +28,15 @@ const BreweryList = () => {
     fetchBreweries()
   }, [])
 
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <>
       <Header />
-
       <S.CardSection>
-        <Card
-          breweries={breweries}
-          loading={loading}
-          setBreweries={setBreweries}
-        />
+        <Card breweries={breweries} setBreweries={setBreweries} />
       </S.CardSection>
     </>
   )
