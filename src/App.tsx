@@ -1,4 +1,3 @@
-import React from "react";
 import Router from "./router";
 import theme from "./styles/theme";
 import GlobalStyles from "styles/global";

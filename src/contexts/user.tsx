@@ -30,15 +30,13 @@ export const UserProvider = ({ children }: UserProviderProps) => {
    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
    useEffect(() => {
-      const data = getStorageItem(STORAGE_KEY)
+      const data = getStorageItem(STORAGE_KEY);
       
       if (data) {
          setUserName(data);
          setIsAuthenticated(true);
-      } else {
-         setIsAuthenticated(false);
       }
-   }, [])
+   }, []);
 
    const addUser = (name: string) => {
       setUserName(name);
