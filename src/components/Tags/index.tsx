@@ -1,3 +1,7 @@
+import React, { useState } from 'react'
+
+import * as S from './styles'
+
 type TextFieldProps = {
   brewery_type: string | null
   postal_code: string | null
@@ -5,35 +9,69 @@ type TextFieldProps = {
 }
 
 const Tags = ({ brewery_type, postal_code, phone }: TextFieldProps) => {
-  const handleAddMore = () => {
-    console.log('object')
+  const [addMore, setAddMore] = useState<boolean>(false)
+  const [inputValue, setInputValue] = useState<string>('')
+  const [addedText, setAddedText] = useState<string>('')
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.currentTarget.value)
+  }
+
+  const handleEnterKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      setAddMore(false)
+      setAddedText(inputValue)
+    }
+  }
+
+  const handleAddMoreClick = () => {
+    if (!addMore) {
+      return setAddMore(true)
+    }
+    setAddMore(false)
+    setAddedText(inputValue)
+  }
+
+  const TextFieldProps = {
+    type: 'text',
+    name: 'newTag',
+    value: inputValue,
+    onChange: handleOnChange,
+    onKeyPress: handleEnterKey,
+    isAddMore: addMore,
   }
 
   return (
-    <section>
+    <S.TagSection>
       {brewery_type && (
-        <div>
-          <img src="/assets/brewery_type.svg" alt="Icon" />
-          <span>{brewery_type}</span>
-        </div>
+        <S.TagWrapper>
+          <S.Image src="/assets/brewery_type.svg" alt="Brewery Type Icon" />
+          <S.Text>{brewery_type}</S.Text>
+        </S.TagWrapper>
       )}
       {postal_code && (
-        <div>
-          <img src="/assets/postal_code.svg" alt="Icon" />
-          <span>{postal_code}</span>
-        </div>
+        <S.TagWrapper>
+          <S.Image src="/assets/postal_code.svg" alt="Postal Code Icon" />
+          <S.Text>{postal_code}</S.Text>
+        </S.TagWrapper>
       )}
       {phone && (
-        <div>
-          <img src="/assets/phone.svg" alt="Icon" />
-          <span>{phone}</span>
-        </div>
+        <S.TagWrapper>
+          <S.Image src="/assets/phone.svg" alt="Phone Icon" />
+          <S.Text>{phone}</S.Text>
+        </S.TagWrapper>
       )}
-      <div onClick={() => handleAddMore()}>
-        <img src="/assets/add_more.svg" alt="Icon" />
-        <span>add more</span>
-      </div>
-    </section>
+      <S.TagWrapper>
+        <S.DynamicImage
+          src={addMore ? '/assets/checked.svg' : '/assets/add_more.svg'}
+          alt="Icon"
+          hasValue={addedText}
+          onClick={handleAddMoreClick}
+        />
+        <S.Text>{!inputValue && !addMore ? 'add more' : addedText}</S.Text>
+        <S.Input {...TextFieldProps} />
+      </S.TagWrapper>
+    </S.TagSection>
   )
 }
 
