@@ -1,33 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import { useUser } from "contexts/user";
-import { useEffect } from "react";
-import { getBreweries } from "services/brewery";
+import React, { useState, useEffect } from "react";
+
+import Card from "components/Card";
+import Header from 'components/Header'
+
+import { getBreweries, IBreweries } from "services/brewery";
 
 const BreweryList = () => {
-   const { logout } = useUser();
-   const navigate = useNavigate();
+   const [breweries, setBreweries] = useState<Array<IBreweries>>();
+   const [loading, setLoading] = useState<boolean>(true);
 
    useEffect(() => {
-      const fetch = async () => {
+      const fetchBreweries = async () => {
          try {
             const data = await getBreweries();
-            console.log(data);
+            setBreweries(data);
+            setLoading(false)
          } catch (error) {
             console.log(error);
          }
-      }
-      fetch();
-   }, [])
-   
-   const handleGoBack = () => {
-      logout();
-      navigate("/");
-   };
+      };
+      fetchBreweries();
+   }, []);
 
    return (
       <>
-         <button onClick={handleGoBack}>Voltar</button>
-         <h1>brewery List</h1>
+         <Header />
+         <Card breweries={breweries} loading={loading} setBreweries={setBreweries} />
       </>
    );
 };
