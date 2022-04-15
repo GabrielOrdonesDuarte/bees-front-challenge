@@ -22,7 +22,7 @@ export const Header = styled.header`
 export const Name = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.xxlarge};
-    font-weight: 400;
+    font-weight: ${theme.font.normal};
     line-height: 150%;
     transition: font-size 0.2s ease-in-out;
 
@@ -38,7 +38,7 @@ export const Action = styled.button`
     flex-direction: row;
     align-items: center;
     font-size: ${theme.font.sizes.xxlarge};
-    font-weight: 400;
+    font-weight: ${theme.font.normal};
     line-height: 150%;
     border: 0;
     background-color: transparent;

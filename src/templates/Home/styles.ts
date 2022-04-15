@@ -18,7 +18,7 @@ export const Home = styled.section`
 export const FormTitle = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
-    font-weight: 400;
+    font-weight: ${theme.font.normal};
     line-height: 150%;
   `}
 `

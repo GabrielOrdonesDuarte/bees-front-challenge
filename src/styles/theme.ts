@@ -3,9 +3,6 @@ export default {
       container: "130rem",
       gutter: "3.2rem",
    },
-   border: {
-      radius: "0.4rem",
-   },
    font: {
       family:
          "'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
@@ -26,14 +23,9 @@ export default {
       primary: "#F2EC54",
       secondary: "#5D5FEF",
       mainBg: "#FFFEF0",   
-      lightBg: "#F2F2F2",
       white: "#FAFAFA",
-      black: "#000 ", 
-      lightGray: "#EAEAEA",
-      gray: "#3F3F46",
-      darkGray: "#27272A",
+      black: "#000", 
       disabled: "#52525B", 
-      red: "#FF6347",
    },
    spacings: {
       xxsmall: "0.8rem",
@@ -43,9 +35,5 @@ export default {
       large: "4.0rem",  
       xlarge: "4.8rem",
       xxlarge: "5.6rem",
-   },
-   transition: {
-      default: "0.3s ease-in-out",
-      fast: "0.1s ease-in-out",
    },
 } as const;
