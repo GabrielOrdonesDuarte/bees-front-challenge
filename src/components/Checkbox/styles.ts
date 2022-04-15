@@ -10,6 +10,7 @@ export const Label = styled.label`
       cursor: pointer;
       padding-left: ${theme.spacings.xxsmall};
       color: ${theme.colors.black};
-      line-height: 1.8rem;
+      line-height: 150%;
+      font-size: ${theme.font.sizes.small};
    `}
 `;
