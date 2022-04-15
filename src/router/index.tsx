@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import BreweryList from 'templates/BreweryList'
 import Home from 'templates/Home'
-import { useUser } from 'contexts/user'
+import { useUser } from 'hooks/use-profile'
 
 const Router = () => {
   const { isAuthenticated } = useUser()

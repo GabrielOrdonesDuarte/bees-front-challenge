@@ -2,7 +2,7 @@ import { ThemeProvider } from 'styled-components'
 import { ToastContainer } from 'react-toastify'
 
 import Router from './router'
-import { UserProvider } from 'contexts/user'
+import { UserProvider } from 'hooks/use-profile'
 
 import theme from './styles/theme'
 import GlobalStyles from 'styles/global'

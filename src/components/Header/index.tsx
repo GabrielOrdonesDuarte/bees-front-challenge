@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import { useUser } from 'contexts/user'
+import { useUser } from 'hooks/use-profile'
 
 import * as S from './styles'
 
