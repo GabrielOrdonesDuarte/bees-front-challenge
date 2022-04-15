@@ -13,6 +13,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <UserProvider>
         <ToastContainer
+          theme="dark"
           position="top-center"
           autoClose={5000}
           hideProgressBar={false}
