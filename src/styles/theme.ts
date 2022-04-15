@@ -25,6 +25,7 @@ export default {
     mainBg: '#FFFEF0',
     white: '#FAFAFA',
     black: '#000',
+    gray: '#3F3F46',
     disabled: '#52525B',
   },
   spacings: {
