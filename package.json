@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
-    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "typecheck": "bash -c tsc --project tsconfig.json --noEmit",
     "prepare": "husky install"
   },
   "lint-staged": {
