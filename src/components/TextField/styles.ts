@@ -4,13 +4,12 @@ export const InputWrapper = styled.div`
    ${({ theme }) => css`
       display: flex;
       align-items: center;
-      background: ${theme.colors.lightGray};
+      background: #fff;
       border-radius: 0.2rem;
-      padding: 0 ${theme.spacings.xsmall};
-      border: 0.2rem solid;
-      border-color: ${theme.colors.lightGray};
+      border: 0.1rem solid;
+      border-color: #D4D4D8;
       &:focus-within {
-         box-shadow: 0 0 0.5rem ${theme.colors.primary};
+         box-shadow: 0 0 0.5rem ${theme.colors.secondary};
       }
    `}
 `;
@@ -20,14 +19,14 @@ export const Input = styled.input`
       color: ${theme.colors.black};
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
-      padding: ${theme.spacings.xxsmall} 0;
+      padding: 1rem ${theme.spacings.xsmall};
       background: transparent;
       border: 0;
       outline: none;
       width: 100%;
       &:-webkit-autofill {
          -webkit-box-shadow: 0 0 0 ${theme.spacings.small}
-            ${theme.colors.lightGray} inset;
+            ${theme.colors.mainBg} inset;
          filter: none;
          &::first-line {
             font-family: ${theme.font.family};
