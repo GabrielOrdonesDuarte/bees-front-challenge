@@ -7,19 +7,13 @@ import { ReactComponent as DeleteIcon } from './trash.svg'
 
 type CardProps = {
   breweries?: Array<IBreweries>
-  loading: boolean
   setBreweries: React.Dispatch<React.SetStateAction<IBreweries[] | undefined>>
 }
 
-const Card = ({ breweries, loading, setBreweries }: CardProps) => {
+const Card = ({ breweries, setBreweries }: CardProps) => {
   const handleDelete = (breweryId: string) => {
     if (!breweries || !breweryId) return
-
     setBreweries(breweries.filter((brewery) => brewery.id !== breweryId))
-  }
-
-  if (loading) {
-    return <h1>Carregando</h1>
   }
 
   return (
