@@ -5,6 +5,8 @@ import Header from 'components/Header'
 
 import { getBreweries, IBreweries } from 'services/brewery'
 
+import * as S from './styles'
+
 const BreweryList = () => {
   const [breweries, setBreweries] = useState<Array<IBreweries>>()
   const [loading, setLoading] = useState<boolean>(true)
@@ -14,9 +16,11 @@ const BreweryList = () => {
       try {
         const data = await getBreweries()
         setBreweries(data)
-        setLoading(false)
+        // TODO: Adicionar toast
       } catch (error) {
         console.log(error)
+      } finally {
+        setLoading(false)
       }
     }
     fetchBreweries()
@@ -25,11 +29,14 @@ const BreweryList = () => {
   return (
     <>
       <Header />
-      <Card
-        breweries={breweries}
-        loading={loading}
-        setBreweries={setBreweries}
-      />
+
+      <S.CardSection>
+        <Card
+          breweries={breweries}
+          loading={loading}
+          setBreweries={setBreweries}
+        />
+      </S.CardSection>
     </>
   )
 }
