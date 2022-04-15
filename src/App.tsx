@@ -1,17 +1,16 @@
 import React from "react";
+import Router from "./router";
+import theme from "./styles/theme";
+import GlobalStyles from "styles/global";
 import { ThemeProvider } from "styled-components";
 import { UserProvider } from "contexts/user";
-import theme from "styles/theme";
-import GlobalStyles from "styles/global";
 
 const App = () => {
    return (
       <ThemeProvider theme={theme}>
          <UserProvider>
             <GlobalStyles />
-            <div className="app">
-               <h1>App.tsx</h1>
-            </div>
+            <Router />
          </UserProvider>
       </ThemeProvider>
    );
