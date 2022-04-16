@@ -29,10 +29,15 @@ const BreweryList = () => {
   }, [])
 
   if (loading) {
-    return <Loading />
+    return (
+      <>
+        <Header />
+        <Loading />
+      </>
+    )
   }
 
-  if (breweries?.length === 0 || !breweries) {
+  if (!breweries?.length || !breweries) {
     return (
       <>
         <Header />
