@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import { MemoryRouter } from 'react-router-dom'
 import { render, RenderOptions } from '@testing-library/react'
 import {
   UserContext,
@@ -23,7 +24,7 @@ const customRender = (
   render(
     <ThemeProvider theme={theme}>
       <UserContext.Provider value={cartProviderProps}>
-        {ui}
+        <MemoryRouter>{ui}</MemoryRouter>
       </UserContext.Provider>
     </ThemeProvider>,
     renderOptions
