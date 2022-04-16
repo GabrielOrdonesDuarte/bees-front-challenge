@@ -18,6 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
     "typecheck": "bash -c tsc --project tsconfig.json --noEmit",
