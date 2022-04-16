@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
     "typecheck": "bash -c tsc --project tsconfig.json --noEmit",
@@ -48,6 +48,8 @@
     ]
   },
   "devDependencies": {
+    "@swc/core": "^1.2.165",
+    "@swc/jest": "^0.2.20",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
@@ -72,7 +74,8 @@
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
     "lint-staged": "^12.3.8",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0"
   },
   "config": {
     "commitizen": {
