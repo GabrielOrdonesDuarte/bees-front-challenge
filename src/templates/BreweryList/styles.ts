@@ -28,3 +28,16 @@ export const CardSection = styled.section`
     padding: 4rem 2rem;
   `}
 `
+
+export const WarningTitle = styled.h1`
+  text-align: center;
+  padding: 10rem;
+
+  ${media.lessThan('large')`
+    padding: 4rem 2rem;
+  `}
+
+  ${media.lessThan('medium')`
+    padding: 4rem 2rem;
+  `}
+`

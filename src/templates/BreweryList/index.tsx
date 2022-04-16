@@ -32,6 +32,15 @@ const BreweryList = () => {
     return <Loading />
   }
 
+  if (breweries?.length === 0 || !breweries) {
+    return (
+      <>
+        <Header />
+        <S.WarningTitle>Nothing Found</S.WarningTitle>
+      </>
+    )
+  }
+
   return (
     <>
       <Header />
